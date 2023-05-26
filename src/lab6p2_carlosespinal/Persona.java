@@ -68,6 +68,11 @@ public class Persona {
     public void setPeso(double Peso) {
         this.Peso = Peso;
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "ID=" + ID + ", Nombre=" + Nombre + ", Sexo=" + Sexo + ", ECivil=" + ECivil + ", Altura=" + Altura + ", Peso=" + Peso + '}';
+    }
     
     
     
