@@ -13,13 +13,13 @@ import java.awt.Color;
 public class Zapato extends Objetos{
     private double Talla;
     private String Description;
-    private String Comodidad;
+    private int Comodidad;
 
     public Zapato() {
         super();
     }
 
-    public Zapato(double Talla, String Description, String Comodidad, Color color, String Descripcion, String Marca, String Size, String Calidad, Persona PIngreso) {
+    public Zapato(double Talla, String Description, int Comodidad, Color color, String Descripcion, String Marca, String Size, String Calidad, Persona PIngreso) {
         super(color, Descripcion, Marca, Size, Calidad, PIngreso);
         this.Talla = Talla;
         this.Description = Description;
@@ -42,11 +42,11 @@ public class Zapato extends Objetos{
         this.Description = Description;
     }
 
-    public String getComodidad() {
+    public int getComodidad() {
         return Comodidad;
     }
 
-    public void setComodidad(String Comodidad) {
+    public void setComodidad(int Comodidad) {
         this.Comodidad = Comodidad;
     }
 

@@ -1071,18 +1071,21 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
         // TODO add your handling code here:
-        ropaC.pack();
-        ropaC.setLocationRelativeTo(this);
-        ropaC.setModal(true);
-        ropaC.setVisible(true);
+        tallaR = JOptionPane.showInputDialog("Talla").charAt(0);
+        telaR = JOptionPane.showInputDialog("Tipo de Tela");
+        paisZ = JOptionPane.showInputDialog("Pais");
+        createObjeto = "ropa";
+        
+        
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         // TODO add your handling code here:
-        hogarC.pack();
-        hogarC.setLocationRelativeTo(this);
-        hogarC.setModal(true);
-        hogarC.setVisible(true);
+        createObjeto = "hogar";
+        descH = JOptionPane.showInputDialog("Descripcion");
+        instruH = JOptionPane.showInputDialog("Instrucciones");
+        funcionH = JOptionPane.showInputDialog("Funcionamiento");
+        garantiaH = Integer.parseInt(JOptionPane.showInputDialog("Tiempo de Garantia"));
         
     }//GEN-LAST:event_jButton8MouseClicked
 
@@ -1116,13 +1119,33 @@ public class Main extends javax.swing.JFrame {
         }
         
         if (createObjeto.equals("zapato")) {
+            double ta = Double.parseDouble(tallaZ.getText());
+            String desZ = descZ.getText();
+            int comfZ = (int)spinnerZ.getValue();
+            DefaultTreeModel a = (DefaultTreeModel)TreeObjetos.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) a.getRoot();
+            Zapato zas = new Zapato(ta, desZ, comfZ, colorO, descrO, marcaO, tamO, qualityO, perO);
+            DefaultMutableTreeNode dmt = new DefaultMutableTreeNode(zas);
+            ((DefaultMutableTreeNode)raiz.getChildAt(0)).add(dmt);
+            a.reload();
             
         } else if(createObjeto.equals("ropa")){
-            
+            DefaultTreeModel a = (DefaultTreeModel)TreeObjetos.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) a.getRoot();
+            Ropa rop = new Ropa(tallaR, telaR, paisZ, colorO, descrO, marcaO, tamO, qualityO, perO);
+            DefaultMutableTreeNode dmt = new DefaultMutableTreeNode(rop);
+            ((DefaultMutableTreeNode)raiz.getChildAt(1)).add(dmt);
+            a.reload();
         } else if(createObjeto.equals("hogar")){
-            
+            DefaultTreeModel a = (DefaultTreeModel)TreeObjetos.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) a.getRoot();
+            ObjetoHogar oh = new ObjetoHogar(descH, instruH,funcionH , garantiaH, colorO, descrO, marcaO, tamO, qualityO, perO);
+            DefaultMutableTreeNode dmt = new DefaultMutableTreeNode(oh);
+            ((DefaultMutableTreeNode)raiz.getChildAt(1)).add(dmt);
         }
+        JOptionPane.showMessageDialog(ObjetoCrear, "Se ha creado el objeto perfectamente bien!");
         
+        ObjetoCrear.setVisible(false);
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**
@@ -1165,6 +1188,14 @@ public class Main extends javax.swing.JFrame {
     
     String createPersona;
     String createObjeto;
+    String paisZ;
+    String telaR;
+    char tallaR;
+    String descH;
+    String instruH;
+    String funcionH;
+    int garantiaH;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AlturaP;
     private javax.swing.JButton CreateP;
