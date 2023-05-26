@@ -5,7 +5,10 @@
 package lab6p2_carlosespinal;
 
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -71,15 +74,19 @@ public class Main extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         sueldoP1 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        ObjetoCrear = new javax.swing.JDialog();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        TreeObjetos = new javax.swing.JTree();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTree2 = new javax.swing.JTree();
+        TreePersonal = new javax.swing.JTree();
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -400,6 +407,46 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jPanel6.setBackground(new java.awt.Color(102, 102, 102));
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("OBJETOS");
+
+        jLabel20.setText("jLabel20");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(493, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel20)
+                .addContainerGap(319, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ObjetoCrearLayout = new javax.swing.GroupLayout(ObjetoCrear.getContentPane());
+        ObjetoCrear.getContentPane().setLayout(ObjetoCrearLayout);
+        ObjetoCrearLayout.setHorizontalGroup(
+            ObjetoCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ObjetoCrearLayout.setVerticalGroup(
+            ObjetoCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -441,37 +488,21 @@ public class Main extends javax.swing.JFrame {
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Objeto");
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Zapatos");
-        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(".");
-        treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Ropa");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(".");
-        treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Objetos de Hogar");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(".");
-        treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        TreeObjetos.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(TreeObjetos);
 
         treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Personal");
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Gerente");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Gerente de Planta");
-        javax.swing.tree.DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode(".");
-        treeNode3.add(treeNode4);
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Gerente de Sucursal");
-        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode(".");
-        treeNode3.add(treeNode4);
-        treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Personal");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(".");
-        treeNode2.add(treeNode3);
         treeNode1.add(treeNode2);
-        jTree2.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane2.setViewportView(jTree2);
+        TreePersonal.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane2.setViewportView(TreePersonal);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -566,7 +597,11 @@ public class Main extends javax.swing.JFrame {
             String pss = passG.getText();
             String crg = cargoG.getText();
             
-            personas.add(new Gerente(us, pss, crg, id, name, si, EsCivil, height, weight));
+            DefaultTreeModel a = (DefaultTreeModel)TreePersonal.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) a.getRoot();
+            DefaultMutableTreeNode node = new DefaultMutableTreeNode(new Gerente(us, pss, crg, id, name, si, EsCivil, height, weight));
+            ((DefaultMutableTreeNode) raiz.getChildAt(0)).add(node);
+            a.reload();
             
         } else if (createPersona.equals("personal")) {
             String oc = ocupacionP.getText();
@@ -575,7 +610,11 @@ public class Main extends javax.swing.JFrame {
             int time = Integer.parseInt(sueldoP1.getText());
             
             personas.add(new Personal(oc, hor, time, sueld, id, name, si, EsCivil, height, weight));
-            
+            DefaultTreeModel a = (DefaultTreeModel)TreePersonal.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) a.getRoot();
+            DefaultMutableTreeNode node = new DefaultMutableTreeNode(new Personal(oc, hor, time, sueld, id, name, si, EsCivil, height, weight));
+            ((DefaultMutableTreeNode) raiz.getChildAt(1)).add(node);
+            a.reload();
         }
         
         createPersona = "";
@@ -638,11 +677,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Gerentebtn;
     private javax.swing.JTextField IDP;
     private javax.swing.JTextField NameP;
+    private javax.swing.JDialog ObjetoCrear;
     private javax.swing.JDialog PersonalC;
     private javax.swing.JDialog PersonalCrear;
     private javax.swing.JButton Personalbtn;
     private javax.swing.JTextField PesoP;
     private javax.swing.JTextField SexoP;
+    private javax.swing.JTree TreeObjetos;
+    private javax.swing.JTree TreePersonal;
     private javax.swing.JTextField cargoG;
     private javax.swing.JTextField horarioP;
     private javax.swing.JButton jButton1;
@@ -659,7 +701,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -672,10 +716,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTree jTree1;
-    private javax.swing.JTree jTree2;
     private javax.swing.JTextField ocupacionP;
     private javax.swing.JTextField passG;
     private javax.swing.JTextField sueldoP;
