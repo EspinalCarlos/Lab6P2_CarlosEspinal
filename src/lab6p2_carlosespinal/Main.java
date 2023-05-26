@@ -914,6 +914,11 @@ public class Main extends javax.swing.JFrame {
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Personal");
         treeNode1.add(treeNode2);
         TreePersonal.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        TreePersonal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TreePersonalMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(TreePersonal);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -1148,6 +1153,21 @@ public class Main extends javax.swing.JFrame {
         ObjetoCrear.setVisible(false);
     }//GEN-LAST:event_jButton3MouseClicked
 
+    private void TreePersonalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TreePersonalMouseClicked
+        // TODO add your handling code here:
+        if (evt.getButton() == 3) {
+            int row = TreePersonal.getClosestRowForLocation(
+                    evt.getX(), evt.getY());
+            TreePersonal.setSelectionRow(row);
+            
+            //Para saber cual nodo esta seleccionado
+            Object v1
+                    = TreePersonal.getSelectionPath().
+                    getLastPathComponent();
+            nodo_seleccionado = (DefaultMutableTreeNode) v1;
+        }
+    }//GEN-LAST:event_TreePersonalMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1195,6 +1215,7 @@ public class Main extends javax.swing.JFrame {
     String instruH;
     String funcionH;
     int garantiaH;
+    DefaultMutableTreeNode nodo_seleccionado;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AlturaP;

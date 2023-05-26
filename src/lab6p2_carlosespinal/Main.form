@@ -1338,6 +1338,9 @@
                   <TreeModel code="Personal&#xa; Gerente&#xa; Personal"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TreePersonalMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
